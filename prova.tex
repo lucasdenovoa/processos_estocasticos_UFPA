@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do not alter this block (unless you're familiar with LaTeX
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, fancyhdr, color, comment, graphicx, environ}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+\pagestyle{fancy}
+
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solução:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+% prevent line break in inline mode
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Your name: Lucas de Nóvoa Martins Pinto}
+
+\chead{\textbf{Homework 2  Due: 17 June 2019 at beginning at class}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{mdframed}[backgroundcolor=blue!20]
+Trabalho processo estocasticos
+\end{mdframed}
+
+\begin{problem}{1}
+\textbf{[0,037pts]} Questao\_01 Determinar a probabilidade de obtenção de uma cara e duas coroas em 3 arremessos de uma moeda ideal.
+
+\end{problem}
+
+\begin{solution}
+
+C - Cara
+
+K - Coroa
+
+Temos 3 possibilidades possiveis sendo: CKK - KCK \textbf{OU} KKC
+
+Cada uma dessas tem a chance de:
+
+\[\frac{1}{2} * \frac{1}{2}  * \frac{1}{2} = \frac{1}{8}\] de ocorrer
+
+assim:
+
+\[\frac{1}{8} + \frac{1}{8}  + \frac{1}{8} = \frac{3}{8}\]
+
+\end{solution}
+
+\begin{problem}{2}
+\textbf{[0,037pts]} Questao\_2 Uma urna contém cinco bolas numeradas. Suponha que selecionamos duas bolas da urna com reposição. Quantos pares ordenados distintos são possíveis? Qual é a probabilidade de retirar duas vezes a mesma bola?
+
+\end{problem}
+
+\begin{solution}
+
+Dado, um par ordenado como sendo (a, b)
+
+Se tem reposição então o espaço amostral é o mesmo e é igual:
+\[ (1,1) (1,2) (1,3) (1,4) (1,5) = 5 \newline \]
+\[ (2,1) (2,2) (2,3) (2,4) (2,5) = 5 \newline \]
+\[ (3,1) (3,2) (3,3) (3,4) (3,5) = 5 \newline \]
+\[ (4,1) (4,2) (4,3) (4,4) (4,5) = 5 \newline \]
+\[ (5,1) (5,2) (5,3) (5,4) (5,5) = 5 \newline \]
+
+entao, 5 \times 5 = \textbf{25 Resultados possíveis}
+
+
+%Sempre que for colocar alguma formular usar o $$
+b) A probabilidade de tirar uma bola e $\frac{1}{5}$
+
+Assim, $\frac{1}{5} \times \frac{1}{5} = \frac{1}{25}$
+
+Agora observe que podemos repetir isso 5 vezes: $\frac{1}{25} \times 5 = 0,2$
+
+\end{solution}
+
+\begin{problem}{3}
+\textbf{[0,037pts]} Questao\_3 Uma urna contém cinco bolas numeradas. Suponha que selecionamos duas bolas da urna em sucessão, e sem reposição. Quantos pares ordenados distintos são possíveis? Qual é a 
+probabilidade de que a primeira bola tenha um número maior que a segunda? 
+
+\end{problem}
+
+\begin{solution}
+
+Sabemos que um par ordenado é dado como sendo (a, b)
+
+Se tem reposição então o espaço amostral é o mesmo e é igual:
+
+\[ (1,2) (1,3) (1,4) (1,5) = 4 \newline \]
+\[ (2,1) (2,3) (2,4) (2,5) = 4 \newline \]
+\[ (3,1) (3,2) (3,4) (3,5) = 4 \newline \]
+\[ (4,1) (4,2) (4,3) (4,5) = 4 \newline \]
+\[ (5,1) (5,2) (5,3) (5,4) = 4 \newline \]
+
+entao, 5 \times 4 = \textbf{20 Resultados possíveis} \newline
+
+
+b) A probabilidade de tirar uma bola e ela ser maior que a anterior ou seja $b>a$ é: \newline
+
+$\frac{1}{5} \times \frac{1}{4} = \frac{1}{20}$ Para o caso de que o primeiro retirado foi \textbf{1}\newline
+$\frac{1}{5} \times \frac{2}{4} = \frac{2}{20}$ Para o caso de que o primeiro retirado foi \textbf{2}\newline
+$\frac{1}{5} \times \frac{3}{4} = \frac{3}{20}$ Para o caso de que o primeiro retirado foi \textbf{3}\newline
+$\frac{1}{5} \times \frac{4}{4} = \frac{4}{20}$ Para o caso de que o primeiro retirado foi \textbf{4}\newline
+
+Observe que o caso que o primeiro retirado é 5 não é válido porque não tem numero maior que esse\newline
+
+Assim, vamos somar todas essas frações e teremos $\frac{10}{20} = 0.5$
+\end{solution}
+
+\begin{problem}{4}
+\textbf{[0,037pts]} Questao\_4 Suponha que uma moeda é jogada três vezes. Se assumimos que as jogadas são independentes e a probabilidade de caras é p, encontre a probabilidade dos eventos nenhuma coroa, uma coroa, duas coroas e três coroas. 
+
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\end{document}
