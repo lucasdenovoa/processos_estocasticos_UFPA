@@ -19,7 +19,7 @@
 \pagestyle{fancy}
 
 
-\newenvironment{problem}[2][Problem]
+\newenvironment{problem}[2][Questão]
     { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
     {  \end{mdframed}}
 
@@ -36,7 +36,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fill in the appropriate information below
-\lhead{Your name: Lucas de Nóvoa Martins Pinto}
+\lhead{Lucas de Nóvoa Martins Pinto}
 
 \chead{\textbf{Homework 2  Due: 17 June 2019 at beginning at class}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +86,7 @@ Se tem reposição então o espaço amostral é o mesmo e é igual:
 \[ (4,1) (4,2) (4,3) (4,4) (4,5) = 5 \newline \]
 \[ (5,1) (5,2) (5,3) (5,4) (5,5) = 5 \newline \]
 
-entao, 5 \times 5 = \textbf{25 Resultados possíveis}
+entao, $5 \times 5 = \textbf{25 Resultados possíveis}$
 
 
 %Sempre que for colocar alguma formular usar o $$
@@ -116,7 +116,7 @@ Se tem reposição então o espaço amostral é o mesmo e é igual:
 \[ (4,1) (4,2) (4,3) (4,5) = 4 \newline \]
 \[ (5,1) (5,2) (5,3) (5,4) = 4 \newline \]
 
-entao, 5 \times 4 = \textbf{20 Resultados possíveis} \newline
+entao, $5 \times 4 = \textbf{20 Resultados possíveis} \newline$
 
 
 b) A probabilidade de tirar uma bola e ela ser maior que a anterior ou seja $b>a$ é: \newline
@@ -138,7 +138,599 @@ Assim, vamos somar todas essas frações e teremos $\frac{10}{20} = 0.5$
 
 \begin{solution}
 
+Para resolver essa questao basta verificar as probabilidades:
+
+p - probabilidade de sair CARA
+k - probabilidade de sair COROA
+
+$p+K=1$ assim, $k = 1-p$
+
+Dessa forma,
+
+(a) Probabilidade de não sair coroa:
+
+P(i) = $p\times p \times p = p^3$
+
+(b) Probabilidade de sair uma coroa:
+
+P(b) = $C(3,1) \times p \times p \times (1-p) = 3 p^2 (1-p)$ 
+
+(c) Probabilidade de sair duas coroa:
+
+P(c) = $C(3,2) \times p \times (1-p) \times (1-p) = 3 p (1-p)^2$ 
+
+(d) Probabilidade de sair 3 coroas:
+
+P(d) = $(1-p) \times (1-p) \times (1-p) = (1-p)^3$ 
+
+\end{solution}
+
+\begin{problem}{5}
+\textbf{[0,037pts]} Questao\_5 Uma companhia tem três máquinas B1, B2 e B3 que fabricam resistores de $1k\Omega$ Observou-se  que $80\%$ dos resistores produzidos por B1 têm tolerância de $50\Omega$do valor nominal. A máquina B2 produz 90\% dos resistores com tolerância de $50\Omega$ do valor nominal. A porcentagem para a 
+máquina  B3  é  de  60\%.  A  cada  hora,  a  máquina  B1  produz  3000  resistores,  B2  produz  4000 
+resistores,  e  B3  produz 3000  resistores.  Todos os resistores  são misturados  em  um  recipiente 
+comum e  empacotados  para  envio.  Desenhe  um  diagrama  em  árvore  para este  experimento. 
+Qual a probabilidade de escolher um resistor da máquina B2 com tolerância maior que 50?
+
+\end{problem}
+
+\begin{solution}
+
+Dados da questão:
+
+\noindent $B_{1}$ = 80\% resistores com tolerancia de 50$\Omega \newline$
+$B_{2}$ = 90\% resistores com tolerancia de 50$\Omega \newline$
+$B_{3}$ = 90\% resistores com tolerancia de 50$\Omega \newline$
+
+\noindent $B_{1}$ = A cada hora produz 3000 resistores \newline
+$B_{2}$ = A cada hora produz 4000 resistores \newline
+$B_{3}$ = A cada hora produz 3000 resistores \newline
+
+Dessa, forma teremos:
+
+$\frac{80}{100} \times 3000 = 2400$ \newline
+
+$\frac{90}{100} \times 4000 = 3600$ \newline
+
+$\frac{60}{100} \times 3000 = 1800$ \newline
+
+Observe o que esses valores nos dizem, em $B_{1}$ temos 3000 resistores, desses 3000 2400 resistores tem tolerancia e 600 não tem. Assim:
+
+Fazendo:
+
+\noindent $B_{j}$ = O resistor da máquina $B_{j}$ \newline
+T = O resistor de tolerância de 50$\Omega$
+
+Assim, 
+
+$P(B_{j} \cap T)$ = probabilidade do resistor ser da caixa $B_{j}$ e ter tolerância de 50$\Omega$ 
+
+$P(T|B_{2})$ = probabilidade do resistor ter tolerancia maior que 50 $\Omega$ dado que pertence a caixa $B_{2}$
+
+Assim: $P(B_{2} \cap T) = P(B_{2} \times P(T|B_{2})$
+
+Temos que: 
+
+$P(T|B_{2})= 0,1$ 
+
+$P(B_{2} \cap T) = \frac{4000}{3000+4000+3000} = 0,4$ \newline
+
+Por isso: $P(B_{2} \cap T) = 0,4 \times 0,1 = 0,04$
+\end{solution}
+
+
+\begin{problem}{6}
+\textbf{[0,037pts]} Questao\_6 Considere o jogo do Três. Você embaralha um baralho de três cartas: às, 2 e 3. Se o às vale um ponto, você retira cartas do baralho até que a soma seja 3 ou mais. Você ganha se o total for 3. Calcule P[W], a probabilidade de vencer o jogo.
+
+\end{problem}
+
+\begin{solution}
+
+Observe que o espaço amostral é o conjunto dos pares ordenados das retiradas de cartas:
+
+$S = {(1,2), (1,3), (2,1), (2,3) (3)}$
+
+Em qual desses casos vencemos ?
+
+$A = {(1,2), (2,1), (3)}$
+
+Assim, $P[W] = \frac{3}{5}$
+
+\end{solution}
+
+\begin{problem}{7}
+\textbf{[0,037pts]} Questao\_7 Quatro moedas ideais são arremessadas simultaneamente.
+
+(a) Quantos resultados são possíveis?
+(b) Associe probabilidades adequadas para a obtenção de quatro coroas, uma cara, duas caras, 
+três caras e quatro caras neste experimento.
+
+\end{problem}
+
+\begin{solution}
+
+a) 
+
+C - Evento CARA
+K - Evento COROA
+
+Espaço amostral é tal que:
+
+$S={(0000), (0001), (0010), (0011), (0100), (0101), (0110), (0111), (1000), (1001), (1010), (1011), (1100), (1101), (1110), (1111)}$
+
+Assim a quantidade de resultados possíveis são 16
+
+b) 
+(i) A possibilidade de 4 coroas:
+
+P(i) = $\frac{1}{16}$
+
+(ii) A probabilidade de 1 cara
+
+P(ii) = $\frac{4}{16} = \frac{1}{4}$
+
+(iii) A probabilidade de 2 caras
+
+P(iii) = $\frac{6}{16} = \frac{3}{8}$
+
+(iv)  A probabilidade de 3 caras
+
+P(iv) = $\frac{4}{16} = \frac{1}{4}$
+
+(v)   A probabilidade de 4 caras
+
+P(v) = $\frac{1}{16}$
+
+\end{solution}
+
+\begin{problem}{8}
+\textbf{[0,037pts]} Questao\_8 Três dados não viciados são jogados. Calcule as probabilidades dos eventos de se obter uma 
+soma de 8, 9 e 10 pontos. 
+
+\end{problem}
+
+\begin{solution}
+
+Antes de resolvermos a questão é preciso definir que o dado se trata de um dado normal com 6 lados (1-6)
+
+Em vista disso, o espaço amostral é $6 \times 6 \times 6 = 216$ possibilidades 
+
+(i) Evento soma obtida igual a 8
+
+Para isso ser verdade temos os valores: (1,1,6) (1,4,3) (1,5,2) (2,3,3) (2,2,4)
+
+Observe que para os eventos (1,1,6) (2,3,3) e (2,2,4) o número de possibilidades é equivalente ao número de permutações distintas igual a uma combinação de 2 pra 3
+
+$C= \frac{3!}{2! \times (3 - 2)!} = 3$
+
+Para os eventos (1,4,3) e (1,5,2) temos um arranjo de 3 pra 3
+
+$A=3 \times 2 \times 1 = 6$
+
+Por isso a probabilidade da soma ser 8 é:
+
+$P(i) = \frac{3 \times 2 + 3 \times 6 + 1}{216} = \frac{25}{216}$
+
+(ii) Evento soma obtida igual a 10
+
+Para isso ser verdade temos os valores: (1,3,6) (1,5,4) (2,2,6) (2,3,5) (4,3,3) (4,4,2)
+
+Novamente aplicando combinação e arranjo temos:
+
+Combinação de 2 pra 3 para (2,2,6), (4,3,3) (4,4,2)
+
+$C= \frac{3!}{2! \times (3 - 2)!} = 3$
+
+Arranjo 3 pra 3 para (1,3,6) (1,5,4) (2,3,5)
+
+$A=3 \times 2 \times 1 = 6$
+
+Por isso a probabilidade da soma ser 10 é:
+
+$P(ii) = 3 \frac{\times 3 + 6 \times 3}{216} = \frac{27}{216}$
+
+\end{solution}
+
+\begin{problem}{9}
+\textbf{[0,037pts]} Questao\_9 Uma certa cidade tem 8 faróis aleatoriamente localizados, quatro dos quais ficam verdes por 
+meio minuto na direção leste-oeste e meio minuto na direção nortesul, três permanecem verdes 
+por  1/4  de  minuto  na  direção  leste-oeste  e  3/4  de  minuto  na  direção  norte-sul,  e  o  último 
+permanece verde 3/4 de minuto na direção leste-oeste e 1/4 de minuto na direção norte-sul. 
+Assuma que todos os faróis são independentes, isto é, não existe nenhum tipo de sincronização 
+entre eles.
+
+Um automóvel está viajando de forma aleatória através da cidade. Encontre: 
+
+a) a probabilidade de o automóvel encontrar um sinal verde na direção leste-oeste. 
+
+b) a probabilidade de o automóvel encontrar um sinal verde na direção norte-sul. 
+
+c)Qual  é  a  probabilidade  de  um  automóvel viajando  aleatoriamente  pela  cidade encontre  um 
+sinal verde?
+
+\end{problem}
+
+\begin{solution}
+
+TOTAL = 8 faróis
+
+Tipo A - 4 primeiros faróis
+Tipo B - 3 faróis seguintes
+Tipo C - último farol
+
+A probabilidade de pertencer aos faróis do Tipo A
+
+Eventos:
+
+(i) Probabilidade do veículo viajar entre os faróis do Tipo A
+
+(ii) Probabilidade do veículo viajar entre os faróis do Tipo B
+
+(iii) Probabilidade do veículo viajar entre os faróis do Tipo C
+
+(iv) Probabilidade de viajar na direção leste-oeste
+
+(v) Probabilidade de viajar na direção leste-oeste E trafegando em um dos faróis do Tipo A 
+
+(vi) Probabilidade de viajar na direção leste-oeste E trafegando em um dos faróis do Tipo B
+
+(vii) Probabilidade de viajar na direção leste-oeste E trafegando em um dos faróis do Tipo C
+
+(viii) Probabilidade de viajar na direção norte-sul
+
+Assim,
+
+$P(iv) = P(i) \cap P(iv) + P(ii) \cap P(iv) + P(iii) \cap P(iv) $
+Dessa forma,
+
+$ P(iv) = \frac{4}{8} \times \frac{1}{2} + \frac{3}{8} \times \frac{1}{4} + \frac{1}{8} \times \frac{3}{4} = \frac{14}{32} = \frac{7}{16}$
+
+b) 
+
+Parecido com o que foi feito antes podemos fazer exatamente a mesma coisa substituindo P(iv) por P(viii)
+
+Assim,
+
+$P(viii) = \frac{4}{8} \times \frac{1}{2} + \frac{3}{8} \times \frac{3}{4} + \frac{1}{8} \times \frac{1}{4} = \frac{18}{32} = \frac{9}{16}$
+
+Observe que isso satisfaze o teorema da probabilidade: $P(iv) + P(viii) = 1$
+
+c)
+Uma vez que o tempo de um sinal estar verde ou vermelho é exatamente o mesmo e que na questão não é dito nenhuma condição de alternância entre eles podemos supor o caso ideal onde a probabilidade seria de $50\%$ para verde assim como para vermelho
+
+\end{solution}
+
+\begin{problem}{10}
+\textbf{[0,037pts]} Questao\_10 Uma urna contém 3 bolas vermelhas e 2 brancas. Duas bolas são retiradas em sucessão, a 
+primeira bola sendo recolocada antes da retirada da segunda. 
+
+(a) Quantos resultados são possíveis? 
+
+(b) Associe probabilidades a cada um destes resultados.
+
+\end{problem}
+
+\begin{solution}
+
+a) $S = {(V,V), (B,B), (V,B), (B,V)}$
+
+b)
+
+$P(V,V) = \frac{3}{5} \times \frac{3}{5} = \frac{9}{25}$
+
+$P(B,B) = \frac{2}{5} \times \frac{2}{5} = \frac{4}{25}$
+
+$P(V,B) = \frac{3}{5} \times \frac{2}{5} = \frac{6}{25}$
+
+$P(B,V) = \frac{2}{5} \times \frac{3}{5} = \frac{6}{25}$
+
+\end{solution}
+
+\begin{problem}{11}
+\textbf{[0,037pts]} Questao\_11 Repita o problema anterior se a primeira bola não for recolocada antes da segunda retirada.
+
+
+\end{problem}
+
+\begin{solution}
+
+a) O espaço amostral não muda: $S = {(V,V), (B,B), (V,B), (B,V)}$
+
+b)
+
+$P(V,V) = \frac{3}{5} \times \frac{2}{4} = \frac{6}{20}$
+
+$P(B,B) = \frac{2}{5} \times \frac{1}{4} = \frac{2}{20}$
+
+$P(V,B) = \frac{3}{5} \times \frac{2}{4} = \frac{6}{20}$
+
+$P(B,V) = \frac{2}{5} \times \frac{3}{4} = \frac{6}{20}$
+
+
+\end{solution}
+
+\begin{problem}{12}
+\textbf{[0,037pts]} Questao\_12 No problema anterior, se sabemos que a primeira retirada foi de uma bola branca, qual é a probabilidade de a segunda retirada ser também de uma bola branca ?
+\end{problem}
+
+\begin{solution}
+
+$P[B|B] = \frac{P[B \cap B]}{P[B]} = \frac{\frac{2}{20}}{\frac{2}{5}} = \frac{5}{20} = \frac{1}{4}$
+
+\end{solution}
+
+\begin{problem}{13}
+\textbf{[0,037pts]} Questao\_13 No  problema  11),  se  sabemos  que  a  segunda  bola  é  vermelha,  qual  a  probabilidade  de  a primeira também ter sido vermelha? Qual a probabilidade da primeira bola ter sido branca?
+\end{problem}
+
+\begin{solution}
+
+Eventos:
+
+(i) A primeira bola ser vermelha
+
+(ii) A segunda bola ser vermelha
+
+P(ii|i) Probabilidade da segunda bola ser vermelha dado que a primeira foi vermelha
+
+P(i|ii) Probabilidade da primeira bola ser vermelha dado que a segunda foi vermelha
+
+$P(i|ii) = \frac{P(ii|i) \times P(i)}{P(ii)}$
+
+Onde, $P(ii) = P(ii \cap i) + P(ii \cap B)$
+
+Assim, $P(ii) = P(i) \times P(ii|i) + P(B) \times P(ii|B)$
+
+$P(ii) = \frac{3}{5} \times \frac{2}{4} + \frac{2}{5} \times \frac{3}{4} = \frac{12}{20} = \frac{3}{5}$
+
+$P(i|ii) = \frac{\frac{2}{4} \times \frac{3}{5}}{\frac{3}{5}} = \frac{2}{4} = \frac{1}{2}$
+
+b)
+
+P(B,V) Probabilidade da primeira bola ter sido branca dado que a segunda foi vermelha
+
+$P(B,ii) = \frac{P(ii|B) \times P(B)}{P(ii)} = \frac{\frac{3}{4} \times \frac{2}{5}}{\frac{3}{5}} = \frac{1}{2}$
+
+\end{solution}
+
+\begin{problem}{14}
+\textbf{[0,037pts]} Questao\_14 Uma urna contém 3 bolas vermelhas, 5 bolas brancas e 8 bolas pretas. Outra urna contém 6 bolas vermelhas, 7 bolas brancas e 4 bolas pretas. Uma bola é retirada de cada urna. Encontre a probabilidade de obter duas bolas da mesma cor.
+\end{problem}
+
+\begin{solution}
+
+Primeira Urna - 3V 5B 8P
+Segunda Urna - 6V 7B 4P
+
+Eventos:
+
+$B|U_{1}$ A bola ser branca dado que pertence a urna 1
+$B|U_{2}$ A bola ser branca dado que pertence a urna 1
+$V|U_{1}$ A bola ser branca dado que pertence a urna 1
+$V|U_{2}$ A bola ser branca dado que pertence a urna 1
+$P|U_{1}$ A bola ser branca dado que pertence a urna 1
+$P|U_{2}$ A bola ser branca dado que pertence a urna 1
+$X$ evento da questão
+
+Então, para resolver é simples, basta encontrar a probabilidade de VV BB ou PP
+
+$P(X) = P(B|U_{1}) \times (B|U_{2}) + (V|U_{1}) \times (V|U_{1}) + (P|U_{1}) \times (P|U_{1})$
+
+$P(X) = \frac{5}{16} \times \frac{7}{17} + \frac{3}{16} \times \frac{6}{17} + \frac{8}{16} \times \frac{4}{17} = \frac{85}{272} $
+
+\end{solution}
+
+\begin{problem}{15}
+\textbf{[0,037pts]} Questao\_15 A caixa I contém 3 bolas vermelhas e 5 bolas brancas, e a caixa II, 4 vermelhas e 2 brancas. Extrai-se ao acaso uma bola da primeira caixa e coloca-se na segunda, sem observar a cor. Extrai-se então uma bola da segunda caixa. Qual a probabilidade da mesma ser branca?
+\end{problem}
+
+\begin{solution}
+
+Caixa I - $3V_{1} 5B_{1}$
+Caixa II - $4V_{2} 2B_{2}$
+
+Evento 1: A bola que sai da caixa 1 para a caixa 2 é branca
+
+Para isso, temos que a bola que sai tanto da primeira caixa quanto da segunda é branca (E)
+
+$P(B_{2}|1) = P(B_{1})P(B_{2}|B_{1} = \frac{5}{8} \times \frac{3}{7} = \frac{15}{56}$
+
+Evemtp 2: A bola que sai da caixa 1 para a caixa 2 é vermelha
+
+Para isso, temos que a bola que sai da primeira caixa é vermelha e da segunda é branca
+
+$P(B_{2}|2) = P(V_{1})P(B_{2}|V_{1} = \frac{3}{8} \times \frac{2}{7} = \frac{6}{56}$
+
+$P(B_{2}) = P(B_{2}|1) + P(B_{2}|2) = \frac{15}{56} + \frac{6}{56} = \frac{21}{56}$
+
+\end{solution}
+
+\begin{problem}{16}
+\textbf{[0,037pts]} Questao\_16 Em certo colégio, 25\% dos estudantes foram reprovados em matemática, 15\% em química 
+e 10\% em matemática e química ao mesmo tempo. Um estudante é selecionado aleatoriamente.
+
+a)  Se  ele  foi  reprovado  em  química,  qual  é  a  probabilidade  de  ele  ter  sido  reprovado  em 
+matemática? 
+
+b) Se  ele  foi  reprovado  em  matemática,  qual  é  a  probabilidade  de  ele  ter  sido  reprovado  em 
+química? 
+
+c) Qual é a probabilidade de ele ter sido reprovado em matemática ou química?
+
+\end{problem}
+
+\begin{solution}
+
+M - Matemática
+Q - Química
+
+a)
+
+$P(M|Q) = \frac{P(M \cap Q)}{P(Q)} = \frac{\frac{10}{100}}{\frac{15}{100}} = \frac{10}{100} \times \frac{100}{15} = \frac{2}{3}$
+
+b)
+$P(Q|M) = \frac{P(Q \cap M)}{P(M)} = \frac{\frac{10}{100}}{\frac{25}{100}} = \frac{10}{100} \times \frac{100}{25} = \frac{2}{5}$
+
+c)
+$P(Q \cup M) = P(Q) + P(M) - P(Q \cap M) = \frac{15}{100} + \frac{25}{100} - \frac{10}{100} = \frac{30}{100} = 30\%$
+
+
+\end{solution}
+
+\begin{problem}{17}
+\textbf{[0,037pts]} Questao\_17 
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}{18}
+\textbf{[0,037pts]} Questao\_18 Uma  urna  contém  duas  bolas  pretas  e  três  bolas  brancas.  Duas  bolas  são  selecionadas aleatoriamente da urna sem reposição, e a sequência de cores é anotada. Encontre a 
+probabilidade de retirar duas bolas pretas.
+\end{problem}
+
+\begin{solution}
+
+Urna: 2P 3B
+
+$P(P) = \frac{2}{5} \times \frac{1}{4} = \frac{1}{10}$
+
+
+\end{solution}
+
+\begin{problem}{19}
+\textbf{[0,037pts]} Questao\_19 Lança-se  uma moeda viciada de  modo que  P[cara] =  2/3 e  P[coroa] =  1/3. Se aparecer 
+cara,  então  seleciona-se  aleatoriamente  um  número  dentre  os  de  1  a  9;  se  aparecer  coroa, 
+seleciona-se aleatoriamente um número dentre os de 1 a 5. Encontre a probabilidade p de um 
+número par ser selecionado.
+\end{problem}
+
+\begin{solution}
+
+C - {1,2,3,4,5,6,7,8,9}
+K - {1,2,3,4,5}
+
+$P{par} = P(par \cap C) + P(par \cap K)$
+
+$P(par) = P(C)P(par|C) + P(K)P(par|K)$
+
+$P(par) = \frac{2}{3} \times \frac{4}{9} + \frac{1}{3} \times \frac{2}{5} = \frac{8}{27} + \frac{2}{15} = \frac{58}{135}$
+
+\end{solution}
+
+\begin{problem}{20}
+\textbf{[0,037pts]} Questao\_20 Dois  dígitos  são  selecionados  aleatoriamente  de  1  a  9,  sem  reposição.  Se  a  soma  é  par, encontre a probabilidade p de ambos os números serem ímpares.
+\end{problem}
+
+\begin{solution}
+
+S: {1,2,3,4,5,6,7,8,9}
+
+P - Evento par, os dois numeros serem pares
+I - Evento impar, os dois números serem impares
+
+Espaco amostral de P: $S_{P} = C(4,2) = \frac{4!}{2!(4 - 2)!} = 6$
+
+Espaco amostral de I: $S_{I} = C(5,2) = \frac{5!}{2!(5 - 2)!} = 10$
+
+$P(I) = \frac{S_{I}}{S_{I} + S_{P}} = \frac{10}{16} = \frac{5}{8}$
+
+\end{solution}
+
+\begin{problem}{21}
+\textbf{[0,037pts]} Questao\_21 elefones celulares realizam handoffs à medida em que se movem de uma célula para outra. 
+Suponha que durante uma chamada, os telefones realizam zero handoffs (H0), um handoff (H1), ou dois handoffs (H2). Adicionalmente, cada chamada pode ser longa (L) ou breve (B). 
+
+Sabendo que P[L,H0] = 0.1, P[B,H1] = 0.1, P[H2] = 0.3, P[B] = 0.6 e P[H0] =0.5, calcule: 
+
+(a) A probabilidade de não ocorrer nenhum handoff durante uma chamada. 
+
+(b) A probabilidade de uma chamada ser breve.
+
+(c) A probabilidade de uma chamada ser longa ou existirem pelo menos dois handoffs.
+
+\end{problem}
+
+\begin{solution}
+
+Dados:
+
+B - Breve \newline
+L - Longa
+
+P(B) = 0,6
+P(L) = 0,4
+
+$P(H_{0}) = 0,5$
+$P(L \cap H_{0}) = P(H_{0} \cap L) 0,1$
+\end{solution}
+
+\begin{problem}{22}
+\textbf{[0,037pts]} Questao\_22
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{23}
+\textbf{[0,037pts]} Questao\_23
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{24}
+\textbf{[0,037pts]} Questao\_24
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{25}
+\textbf{[0,037pts]} Questao\_25
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{26}
+\textbf{[0,037pts]} Questao\_26
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{27}
+\textbf{[0,037pts]} Questao\_27
+\end{problem}
+
+\begin{solution}
+
+
+\end{solution}
+
+\begin{problem}{28}
+\textbf{[0,037pts]} Questao\_28
+\end{problem}
+
+\begin{solution}
+
 
 \end{solution}
 
 \end{document}
+
+
+
+
