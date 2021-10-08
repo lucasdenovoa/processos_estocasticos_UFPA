@@ -36,15 +36,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fill in the appropriate information below
-\lhead{Lucas de Nóvoa Martins Pinto}
+\lhead{Lucas de Nóvoa Martins Pinto - Primeira lista processos estocásticos PPGEE 2021.4}
 
-\chead{\textbf{Homework 2  Due: 17 June 2019 at beginning at class}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
 \begin{mdframed}[backgroundcolor=blue!20]
-Trabalho processo estocasticos
+Primeira lista da primeira avaliação de Processos Estocasticos turma 2021.4
 \end{mdframed}
 
 \begin{problem}{1}
@@ -256,7 +255,7 @@ K - Evento COROA
 
 Espaço amostral é tal que:
 
-$S={(0000), (0001), (0010), (0011), (0100), (0101), (0110), (0111), (1000), (1001), (1010), (1011), (1100), (1101), (1110), (1111)}$
+\[S={(0000), (0001), (0010), (0011), (0100), (0101), (0110), (0111), (1000), (1001), (1010), (1011), (1100), (1101), (1110), (1111)} \]
 
 Assim a quantidade de resultados possíveis são 16
 
@@ -664,49 +663,156 @@ P(L) = 0,4
 
 $P(H_{0}) = 0,5$
 $P(L \cap H_{0}) = P(H_{0} \cap L) 0,1$
+
+$P(H_{0}) = P(H_{0} \cap L) + P(H_{0} \cap B)$
+
+O que implica dizer que: $P(H_{0} \cap B) = 0,4$
+
+Assim,
+
+$P[B] = P(B \cap H_{0}) + P(B \cap H_{1}) + P(B \cap H_{2})$
+
+$0,6 = 0,4 + 0,1 + P(B \cap H_{2})$
+
+$P(B \cap H_{2}) = 0,1$
+
+Assim: $P(B) + P(L) = 1$ então, $P(L) = 0,4$
+
+$P(H_{2} \cap L)$ pode ser encontrado como:
+
+$P(H_{2}) = P(H_{2} \cap L) + P(H_{2} \cap B)$
+$0,3 = 0,1 + P(H_{2} \cap L)$
+$P(H_{2} \cap L) = 0,2$
+
+A ultima probabilidade é:
+
+$P(L) = P(L \cap H_{0}) + P(L \cap H_{1}) + P(L \cap H_{2})$
+$0,4 = 0,1 + P(L \cap H_{1}) + 0,2$
+$P(L \cap H_{1}) = 0,1$
+
+a) A probabilidade de não ocorrer nenhum handoff é $50\%$
+
+b) A probabilidade de uma chamada ser breve é: $60\%$
+
+c) A probabilidade de uma chamada ser longa ou existirem pelo menos dois handoffs é dado como: $P(L) + P(H_{2}) - P(L \cap H_{2}) = 0,4+0,3 - 0,2 = 0,5$
 \end{solution}
 
 \begin{problem}{22}
-\textbf{[0,037pts]} Questao\_22
+\textbf{[0,037pts]} Questao\_22 Três máquinas A, B e C produzem 50\%, 30\% e 20\% respectivamente, do total de peças de uma fábrica. As porcentagens de produção de peças defeituosas destas máquinas são 3\%, 4\% e 5\%, respectivamente. 
+
+a) Se uma peça é selecionada aleatoriamente, ache a probabilidade dela ser defeituosa. 
+
+(b) Suponha que uma peça, selecionada aleatoriamente, seja considerada defeituosa. Encontre a probabilidade dela ter sido produzida pela máquina A.
 \end{problem}
 
 \begin{solution}
 
+a)
+
+$P(D) = P(D \cap A) + P(D \cap B) + P(D \cap C)$
+
+$P(D) = 0,5 \times 0,03 + 0,3 \times 0,04 + 0,2 \times 0,05 = 0,037$
+
+b) $P(A|D) = \frac{P(D|A) \times P(A)}{P(D)} = \frac{0,03 \times 0,5}{0,037} = \frac{0,015}{0,037} = \frac{15}{37}$
 
 \end{solution}
 
 \begin{problem}{23}
-\textbf{[0,037pts]} Questao\_23
+\textbf{[0,037pts]} Questao\_23 No sistema de comunicação ternário mostrado na figura abaixo, um 3 é enviado três vezes 
+mais frequentemente que um 1, e um 2 é enviado duas vezes mais frequentemente que um 1. 
+Um 1 é observado. Qual a probabilidade de um 1 ter sido enviado? 
 \end{problem}
 
 \begin{solution}
 
+$P(X=3) = 3 \times P(X=1)$
+$P(X=2) = 2 \times P(X=1)$
+
+$\sum_{-\propto}^{+\propto} P(X=x_{i}) = 1$
+
+$P(X=1) + P(X=2) + P(X=3) = 1$
+$P(X=1) +2 \times P(X=1) + 3 \times P(X=1) = 1$
+$P(X=1) = \frac{1}{6}$
+
+$P(Y=1)(X=1) = \frac{P(y=1 \cap x=1}{P(x=1)} $
+
+Assim, pelo teorema de Bayes
+
+$P(X=1)(Y=1) = \frac{P(y=1)(x=1) \times P(x=1)}{P(y=1)} $
+
+Calculando a probabilidade total:
+
+$P(y=1) = P(x=1)P(Y=1)(x=1) + P(x=2)P(y=1)(x=2) + P(x=3)O(y=1)(x=3)$
+
+$P(y=1) = \frac{1}{6}(1-\alpha)+\frac{2}{6} \times \frac{\beta}{2} + \frac{3}{6} \times \frac{\gamma}{2}$
+
+$P(y=1) = \frac{1}{6}(1- \alpha + \frac{1}{6}\beta + 1,5\gamma)$
+
+Assim,
+
+$P(x=1)(y=1) = \frac{(1-\alpha)}{(1- \alpha + \frac{1}{6}\beta + 1,5\gamma)}$
 
 \end{solution}
 
 \begin{problem}{24}
-\textbf{[0,037pts]} Questao\_24
+\textbf{[0,037pts]} Questao\_24 Para a comunicação entre os terminais A e B são necessários enlaces que são representados 
+nas  figuras  abaixo  por  arcos (linhas).  Sendo  p  a  probabilidade  de  que  um  enlace  esteja 
+ocupado, determine a probabilidade de que não exista caminho livre para comunicação em cada uma das 
+seguintes configurações: 
+
+
 \end{problem}
 
 \begin{solution}
+
+a)
 
 
 \end{solution}
 
 \begin{problem}{25}
-\textbf{[0,037pts]} Questao\_25
+\textbf{[0,037pts]} Questao\_25 Durante  a  recepção  de  mensagens  codificadas,  consistindo  de  pulsos  de  formas  A  e  B, estabeleceu-se que de cada 10 combinações equiprováveis, três são do tipo AAB, cinco são do 
+tipo AB, e duas são do tipo ABB. Qual é a probabilidade de que um pulso escolhido aleatoriamente seja da forma A?
 \end{problem}
 
 \begin{solution}
+
+Dados:
+
+3 mensagens codificadas
+
+Evento 1: A cada 10 mensagens equiprováveis: 3 são do tipo AAB
+
+Evento 2: A cada 10 mensagens equiprováveis: 5 são do tipo AB
+
+Evento 3: A cada 10 mensagens equiprováveis: 2 são do tipo ABB
+
+$P(A) = P(1) \times P(1|A) + P(2) \times P(2|A) + P(3) \times P(3|A)$
+
+$P(A) = \frac{3}{10} \times \frac{2}{3} + \frac{5}{10} \times \frac{1}{2} + \frac{2}{10} \times \frac{1}{3} = \frac{1}{5} \times \frac{1}{1} + \frac{1}{2} \times \frac{1}{2} + \frac{1}{5} \times \frac{1}{3}$
+
+$\frac{1}{5} + \frac{1}{4} + \frac{1}{15} = \frac{31}{60}$
+
 
 
 \end{solution}
 
 \begin{problem}{26}
-\textbf{[0,037pts]} Questao\_26
+\textbf{[0,037pts]} Questao\_26 Sabendo que a probabilidade de um homem viver mais de dez anos é 1/4, a probabilidade 
+de sua esposa viver mais de dez anos é 1/3, encontre a probabilidade dos seguintes eventos
+
+(a) ambos estarem vivos depois de dez anos, 
+
+(b) ao menos um estar vivo depois de dez anos, 
+
+(c) nenhum deles estar vivo depois de dez anos, 
+
+(d) somente a esposa estar viva depois de dez anos. 
+
 \end{problem}
 
 \begin{solution}
+
 
 
 \end{solution}
@@ -730,6 +836,7 @@ $P(L \cap H_{0}) = P(H_{0} \cap L) 0,1$
 \end{solution}
 
 \end{document}
+
 
 
 

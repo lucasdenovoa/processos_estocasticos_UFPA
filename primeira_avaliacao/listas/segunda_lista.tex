@@ -1,0 +1,1120 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do not alter this block (unless you're familiar with LaTeX
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, fancyhdr, color, comment, graphicx, environ}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+\pagestyle{fancy}
+
+
+\newenvironment{problem}[2][Questão]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}
+    {\textit{Solução:}}
+    {}
+
+\renewcommand{\qed}{\quad\qedsymbol}
+
+% prevent line break in inline mode
+\binoppenalty=\maxdimen
+\relpenalty=\maxdimen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Lucas de Nóvoa Martins Pinto - Segunda lista processos estocásticos PPGEE 2021.4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{mdframed}[backgroundcolor=blue!20]
+segunda lista da primeira avaliação de Processos Estocasticos turma 2021.4
+\end{mdframed}
+
+\begin{problem}{1}
+\textbf{[0.04pts]} Questao\_01 Uma variável aleatória discreta X tem função densidade de probabilidade dada por:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| }
+\hline
+ x1        & 0    & 1   & 2 & 3   \\
+ P(X = x1) & 1/10 & 1/5 & m & 1/10 \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+ a)   Determine o valor de m. 
+ 
+ b) Construa a função distribuição de probabilidade da variável aleatória X.
+
+\end{problem}
+
+\begin{solution}
+
+\textbf{a)}
+
+$\sum_{-\infty}^{\infty} p(x_{i}) = 1$
+
+$\frac{1}{10} + \frac{1}{5} + m + \frac{1}{10} = 1$
+
+$m = \frac{3}{5}$
+
+\hrulefill
+
+\textbf{b)}
+
+$F_{x}(x) =  \sum_{k}^{} p_{x}(x_{k}) u(x - x_{k})$
+
+$u(x) = 0$ quando $x < 0 $
+
+$u(x) = 1$ quando $x \geq 0$
+
+\end{solution}
+
+\begin{problem}{2}
+\textbf{[0.04pts]} Questao\_2 Seja X a variável aleatória que representa o número de computadores vendidos, por dia, numa loja de um Centro Comercial. A função densiadde de probabilidade da v.a. X dada por 
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|}
+\hline
+
+x & 0 & 1 & 2 & 3 \\
+P (X = x) & 1/6 & p & 1/30 & 3/10 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+a) Determine a probabilidade de vender um computador por dia.
+
+b) Calcule P (1 ≤ X < 4); P (X > 2); P (X ≤ 1); P (X > 1/ X < 3).
+
+\end{problem}
+
+\begin{solution}
+
+$X ->$ número de computadores vendidos por dia
+
+\textbf{a)}
+
+$\sum_{0}^{3} p(x_{i}) = 1$
+
+$\frac{1}{6} + p + \frac{1}{30} + \frac{3}{10} = 1$
+
+$p = \frac{15}{30}$ OU $p=\frac{1}{2}$
+
+\hrulefill
+
+\textbf{b)} P (1 ≤ X < 4) = $ P(1) + P(2) + P(3)$
+$\frac{1}{2} + \frac{1}{30} + \frac{3}{10} = \frac{25}{30} = \frac{5}{6}$
+
+$P (X > 2)$ = $P(3) = \frac{3}{10}$
+
+$P (X \leq 1)$ = $P(0) + P(1) = \frac{1}{6} + \frac{1}{2} = \frac{4}{6}$
+
+$P (X > 1/ X < 3)$ = $\frac{P(1<X<3)}{P(X<3)} = \frac{P(2)}{P(0)+P(1)+P(2)} = \frac{\frac{1}{30}}{\frac{1}{6}+\frac{1}{2}+\frac{1}{30}} = \frac{1}{21}$
+
+
+
+\end{solution}
+
+\begin{problem}{3}
+\textbf{[0.04pts]} Questao\_3 Seja X um v.a. que nos indica o número de automoveis procurados por um dia num certo stand de vendas. A função de probabilidade da v.a.  X     dada por:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|}
+\hline
+
+x &0 & 1 & 2 & 3 & 4 \\ 
+P(X=x) & 1/20 & p & q & 1/3 & 1/4 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+a) Sabendo que, em 75\% dos dias são procurados pelo menos dois automóveis, calcule p e q. 
+
+b) Calcule a probabilidade de virem a ser procurados 3 automóveis, num dia em que as procuras foram em número de pelo menos  dois.
+
+\end{problem}
+
+\begin{solution}
+
+$P(X \geq 2) = \frac{75}{100} = \frac{3}{4}$ \\
+$P(X \geq 2) = q + \frac{1}{3} + \frac{1}{4} = \frac{3}{4}$ \\
+$q = \frac{3}{4} - \frac{1}{3} - \frac{1}{4} = \frac{2}{12} = \frac{1}{6}$ \\
+$q=\frac{1}{6}$ 
+
+$\sum_{0}^{4} P(x_{i}) = 1$ \\
+$\frac{1}{20} + p + \frac{1}{6} + \frac{1}{3} + \frac{1}{4} = 1$ \\
+$p = 1 - \frac{1}{20} - \frac{9}{12}$ \\
+$p = \frac{12}{60} = \frac{1}{5}$
+
+\hrulefill
+
+b)
+$P(\frac{x=3}{x \geq 2}) = \frac{P(x=3)}{P(x \geq 2)} = \frac{\frac{1}{3}}{\frac{1}{6}+\frac{1}{3}+\frac{1}{4}} = \frac{\frac{1}{3}}{\frac{9}{12}} = \frac{4}{9}$
+
+\end{solution}
+
+\begin{problem}{4}
+\textbf{[0.04pts]} Questao\_4 Seja X uma variável aleatória discreta com a seguinte função densidade de probabilidade: 
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|}
+\hline
+
+x & −2 & −1 & 0 & 1 & 2 \\
+P (X = x) & 0,1 & 0,3 & 0,1 & 0,2 & 0, 3 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+a)Calcule  E[X]  e  Var[X]
+
+b)Desenhe a função de distribuição de probabilidade de X.  
+
+c)Desenhe a distribuição de probabilidade da variável aleatória Y  = $X^{2}$.
+
+\end{problem}
+
+\begin{solution}
+
+a) E(x) e Var(x)
+
+$E(x) = \sum_{i=1}^{n} x_{i} p_{x}(x_{i})$ \\
+$E(x) = u_{x} = -2 0.1 - 1 0.3 + 1 0.2 + 2 0.3$
+$u_{x} = 0.3$
+
+$Var(x) = \sigma_{x}^{2} = \sum_{-\infty}^{\infty} (x_{i}u_{x})^{2} p(x_{i})$ \\
+
+$ Var(x) = (-2-0.3)^{2} 0.1 + (-1-0.3)^2 0.3 + (0 - 0.3)^{2}0.1 + (1-0.3)^{2}0.2+ (2-0.3)^{2}0.3$ \\
+
+$Var(x) = 0.529 + 0.507 + 0.098 + 0.009 + 0.867$ \\
+$Var(x) = 2.01$
+
+\end{solution}
+
+\begin{problem}{5}
+\textbf{[0.04pts]} Questao\_5 A variável aleatória X tem a seguinte distribuição de probabilidades:
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|}
+\hline
+
+x & 2 & 3 & 5 & 8 \\
+Probabilidade & 0,2 & 0,4 & 0,3 & 0,1 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+Determine o seguinte: 
+ 
+a) $P(X \leq 3)$ 
+ 
+b) $P(X > 2,5)$
+
+c) $P(2,7 < X < 5,1) $
+
+d) $E(X)$ 
+
+e) $V(X)$ (variância ) 
+
+\end{problem}
+
+\begin{solution}
+
+a) $P (X \leq 3) = P(2) + P(3) = 0.2 + 0.4 = 0.6$
+
+b) $P(x>2.5) = P(3) + P(5) + P(8) = 0.4 + 0.3 + 0.1 = 0.8$
+
+c) $P(2.7 < X < 5.1) = P(3) + P(5) = 0.4 + 0.3 = 0.7$
+
+d) $E(x) = u_{x} = 2 0.2 + 3 0.4 + 5 0.3 + 8 0.1$ \\
+
+$u_{x} = 3.9$
+
+e) 
+
+$Var(x) = (2-3.9)^{2}0.2 + (3-3.9)^{2} 0.4 + (5-3.9)^{2} 0.3 + (8 -3.9)^{2} 0.1 $
+
+$Var(x) = 0.722 + 0,324 + 0,363 + 1,681$
+
+$Var(x) = 3.09$
+
+\end{solution}
+
+
+\begin{problem}{6}
+\textbf{[0.04pts]} Questao\_6 O  número  de  esquentadores  vendidos  diariamente  num  estabelecimento  é  bem descrito por uma variável aleatória com a seguinte função de probabilidade:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|}
+\hline
+
+x & 0 & 1 & 2 & 3 & 4 \\
+f(x) & a & b & c & b & a \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+
+Se em vinte por cento dos dias as vendas são inferiores a uma unidade e, em  trinta por 
+cento dos dias as vendas são superiores a duas unidades. 
+
+a) Determine  as  constantes  a,  b,  e  c,  bem  como  a  função  distribuição  da  variável aleatória X. 
+
+b) Determine  a  probabilidade  de,  quando  considerado  dois  dias,  as  vendas  sejam 
+superiores em cada um deles, a uma unidade.
+
+c) Se  cada  esquentador  é  vendido  a  75  euros,  determine  a  função  probabilidade  da receita bruta obtida com a venda de esquentadores num dia. 
+
+d) Se num dia a receita bruta for inferior a 200 euros, determine a probabilidade de ser 
+superior a 100 euros. 
+
+\end{problem}
+
+\begin{solution}
+
+a) 
+
+20\% dias vendas $< 1 P(X<1) = P(0) = 0.2$
+
+30\% dias vendas $> 2 P(x>2) = P(3) + P(4) = 0.3$
+
+P(0) = a = 0.2
+
+P(3) = b = 0.1
+
+P(0)+P(1)+P(2)+P(3)+P(4) = 1 $\newline$
+
+O que implica: 2a+2b+c = 1 
+
+c = 0.4
+
+F(X=x) = 0   quando, $x<0$ 
+
+F(X=x) = 0,2 quando, $0 \leq x < 1$ 
+
+F(X=x) = 0,3 quando, $1 \leq x < 2$ 
+
+F(X=x) = 0,7 quando, $2 \leq x < 3$ 
+
+F(X=x) = 0.8 quando, $3 \leq x < 4$ 
+
+F(X=x) = 1   quando, $x>4$ 
+
+b) 
+
+$P(X=1 \cap X=1) = P(X=1) \times P(X=1) = 0.7 \times 0.7 = 0.49$
+
+c) 
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|}
+\hline
+
+x & 0 & 1 & 2 & 3 & 4 \\
+r & 0,75 & 1,75 & 2,75 & 3,75 & 4,75 \\
+r & 0 & 75 & 150 & 225 & 300 \\
+P(r) & 20\% & 10\% & 40\% & 10\% & 20\% \\
+ \hline
+\end{tabular}
+\end{center}
+
+d) $P(\frac{R>100}{R<200}) = \frac{P(100<R<200)}{R<200}=\frac{0.4}{0.7} = 0.5714$
+
+\end{solution}
+
+\begin{problem}{7}
+\textbf{[0.04pts]} Questao\_7 A percentagem de álcool em certo composto pode ser considerada uma v.a. X, onde 
+$0 < x < 1$, com a f.d.p, $f(x)=x^{3}(1−x),0<x <1.$
+\end{problem}
+
+\begin{solution}
+
+$f(x) = c x^{3}(1-x)$ quando, 0<x<1 f.d.p
+
+a) Determine o valor de c
+
+$\int_{0}{1} f(x) \, dx = 1$
+$\int_{0}{1}  c x^{3}(1-x) \, dx = 1$
+$(\frac{x^{4}}{4} - \frac{x^{5}}{5})|_{0}^{1} = 1/c$
+
+$\frac{1}{4}-\frac{1}{5}=\frac{1}{c}$
+
+$c=20$
+
+b) Calcule $P(\frac{1}{2} < x < 1)$
+
+$P(\frac{1}{2} < x < 1) = \int_{\frac{1}{2}}^{1} f(x) \,dx$
+$P(\frac{1}{2} < x < 1) = 20 (\frac{x^{4}}{4} - \frac{x^{5}}{5})$
+
+$P(\frac{1}{2} < x < 1) = 0.8125$
+
+\end{solution}
+
+\begin{problem}{8}
+\textbf{[0.04pts]} Questao\_8 O diâmetro X de um cabo elétrico supõe-se ser uma v.a. com f.d.p, assim definida:
+
+$f(x) = 6x(1-x)$, QUANDO, $0 \leq x < 1$
+$f(x) = 0$, QUANDO, caso contrário
+
+a) Verifique tratar-se de um f.d.p.
+
+b)  Calcule $P(X \leq \frac{1}{2} | \frac{1}{3} < X < \frac{2}{3})$
+
+\end{problem}
+
+\begin{solution}
+
+$f(x) = 6x(1-x)$ quando, $0 \leq x < 1$
+$f(x) = 0$ caso contrário
+
+a) Sim
+
+b) $P(A|B) = \frac{P(AB)}{P(B)} = \frac{P(1/3 <x \leq 1/2}{P(1/3<x<2/3}$
+
+$\int_{a}^{b} f(x) \,dx = 6 (\frac{x^{2}}{x^{3}/3}$
+
+$P(1/3 < X \geq 1/2) = 6 ((\frac{1}{8} - \frac{1}{24}) -(\frac{1}{18} - \frac{1}{81})) = 0.2407 $
+
+$P(1/3 < X \geq 1/2) = 6 ((\frac{4}{18} - \frac{8}{81}) -(\frac{1}{18} - \frac{1}{81})) = 0.4814 $
+
+$P(x \geq 1/2 / 1/3 < X \geq 2/3) = 0.2407/0.4814 = \frac{1}{2}$
+
+\end{solution}
+
+\begin{problem}{9}
+\textbf{[0.04pts]} Questao\_9 Suponha  que  uma  pequena  estação  de  serviço  é  abastecida  com  gasolina  todos  os 
+sábados  à  tarde.  O  seu  volume  de  vendas,  em  milhares  de  litros,  é  uma  variável aleatória. Considerando que a função densidade de X é:
+
+$f(x) = 6x(1-x)$, QUANDO, $0 \leq x < 1$
+
+$f(x) = 0$, QUANDO, caso contrário
+
+a) Determine $P(0 < X < 0.75$
+
+b) Determine o volume médio de vendas e sua variância.
+
+\end{problem}
+
+\begin{solution}
+
+a) 
+
+$\int_{a}^{b} f(x) \, dx = 6 (\frac{x^{2}}{2} -\frac{x^{3}}{3}) = 0.84375$
+
+b) 
+
+$u_{x} = \int_{-\infty}^{\infty} xf(x) \,dx$
+$u_{x} = \int_{0}^{1} 6(x^{2} - x^{3}) \,dx$
+
+$u_{x} = 6(\frac{1}{3} - \frac{1}{4} = 6 \frac{1}{12} = \frac{1}{2}$
+
+$u_{x} = 0.5$
+
+$\sigma_{x}^{2} = \int_{0}^{1} (x-u_{x})^{2} f(x) \, dx$
+$\sigma_{x}^{2} = \int_{0}^{1} (x-\frac{1}{2})^{2} f(x) \, dx$
+
+$\sigma_{x}^{2} = \int_{0}^{1} 6 (x^{2} - x + \frac{1}{4}) (x-x^{2}) \, dx$
+
+$\sigma_{x}^{2} = 6 (\frac{x^{4}}{4}-\frac{x^{3}}{3}+\frac{x^{2}}{8}-\frac{x^{5}}{5}+\frac{x^{4}}{4}-\frac{x^{3}}{12}$
+
+$\sigma_{x}^{2} = 0.05$
+
+\end{solution}
+
+\begin{problem}{10}
+\textbf{[0.04pts]} Questao\_10 A  Procura  mensal  de  um  certo  artigo  é  uma  variável  aleatória  X  com  a  seguinte 
+função densidade:
+
+$f(x) = \frac{x}{4}$, QUANDO, $0 \leq x \leq 2$
+
+$f(x) = 1-\frac{x}{4}$, QUANDO, $2 \leq x \leq 4$
+
+$f(x) = 0$, QUANDO, caso contrário
+
+a) Calcule a funçao de distribuicao de x
+
+
+
+\end{problem}
+
+\begin{solution}
+
+a) Calcule a funçao de distribuicao de x
+
+$F(X) = \int_{0}^{x} \frac{x}{4} \, dx$
+
+$F(x) = \frac{x^{2}}{8} 0 \geq x < 2$
+
+$F(x) = \int_{2}^{x} 1-\frac{x}{4} \, dx + \int_{0}^{2} \frac{x}{4} \, dx = (x - \frac{x^{2}}{8}) + \frac{x^{2}}{8}$
+
+$F(x) = x - \frac{x^{2}}{8}-2+\frac{4}{8}+\frac{4}{8}$
+
+$F(x) = x - \frac{x^{2}}{8}-1$ quando $2 \leq x < 4$
+
+$F(x) = 0$                   quando, $x <0 $
+$F(x) = \frac{x^{2}}{8}$     quando, $0 \leq x <2 $
+$F(x) = x-\frac{x^{2}}{8}-1$ quando, $2 \leq x <4 $
+$F(x) = 1$                   quando, $x >4 $
+
+\end{solution}
+
+\begin{problem}{11}
+\textbf{[0.04pts]} Questao\_11 O tempo de permanência dos alunos numa aula de 2 horas é uma variável aleatória X com densidade de probabilidade: 
+
+
+$f(x) = 1-\frac{x}{2}$, QUANDO, $0 \leq x \leq 2$
+
+$f(x) = 0$, caso contrário
+
+a) Qual a probabilidade de um aluno, escolhido ao acaso, assistir a mais de 75\% da aula ?
+
+b) De  10  alunos,  escolhidos  ao  acaso  no  conjunto  dos  alunos  que  estão  presentes  no início  da  aula,  qual  a  probabilidade  de  apenas  1  permanecer  na  sala  quando  faltam  15 minutos para a aula terminar. 
+
+\end{problem}
+
+\begin{solution}
+
+a) $P[x>75\%]$
+
+Aula_Total = 2horas o que quer dizer que 75\% 2hrs = 1.5
+
+$P(X > 1.5) = \int_{1.5}^{2} (1-\frac{x}{2} \,dx = (x-\frac{x^{2}}{4})$
+
+$P(X > 1.5) = 0.0625$
+
+b) 
+
+
+\end{solution}
+
+\begin{problem}{12}
+\textbf{[0.04pts]} Questao\_12 Considere a tabela que representa a função massa de probabilidade conjunta do par 
+aleatório (X,Y): 
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|}
+\hline
+
+$X|Y$ & 0 & 1 & 2 & 3  \\
+1 & 0,1 & 0.15 & 0.2 & p  \\
+2 & P & 0.15 & 0.15 & 0.05 \\
+3 & 0.05 & 0 & P & 0  \\
+ \hline
+\end{tabular}
+\end{center}
+
+a) Determine o valor de p e obtenha as funções massa de probabilidade marginal X e Y.
+
+b) Defina a função distribuição da variável aleatória X.
+
+c) Verifique se X e Y são variáveis aleatórias independentes. Calcule a covariância das variáveis X e Y.
+
+d) Considere a  variável  aleatória W=X+2Y.  Calcule  o  seu  valor  médio e  sua variância.
+
+e) Calcule $P(X+Y \leq 3 | Y_{impar}$ 
+
+\end{problem}
+
+\begin{solution}
+
+
+Função massa de probabilidade = função de densidade de probabilidade (v.a. continuas)
+
+a) Determine o valor de p e fmp de x y
+
+$0.15 + 0.30 + 0.35 + 0.05 + 3p = 1$
+$0.85 + 3p = 1$
+
+$3p = 0.15$ 
+$p = 0.05$
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|}
+\hline
+
+X & 1 & 2 & 3 \\
+P(x) & 0.5 & 0.4 & 0.1 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|}
+\hline
+
+Y & 0 & 1 & 2 & 3  \\
+P(y) & 0.2 & 0.3 & 0.4 & 0.1 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+b) Defina a função distribuicao da v.a. X
+
+$F(x) = 0 $ quando, $x<1$
+$F(x) = 0.5 $ quando, $x<1$
+$F(x) = 0.9 $ quando, $x<1$
+$F(x) = 1 $ quando, $x \geq 3$
+
+c) Não são independentes porque P(x) depende da variável de Y
+
+Calculo da variância:
+
+$\sigma_{xy} = E(xy) - u_{x}u_{y}$
+
+$u_{x} = 1 0.5 + 2 0.4 + 3 0.1$
+$u_{x} = 0.5 + 0.8 + 0.3 = 1.6$
+
+$u_{y} = 0 + 0.3 + 0.8 + 0.3$
+$u_{y} = 1.4$
+
+$E[xy] = \sum_{0}^{3}\sum_{1}^{3} x_{i}y_{i} P(x_{i}y_{i})$
+
+$E[xy] = 0 + 0.15 + 0.30 + 2 (0.2+0.3+0.12)+3(0.05+0.1)$
+$E[xy] = 0.45 + 1.30 + 0.45$
+$E[xy] = 2.24$
+
+$\sigma_{xy} = 2.20 - (1.6 \times 1.4)$
+$\sigma_{xy} = -0.04$
+
+$w= x + 2Y$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|}
+\hline
+
+w & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+P(w) & 0.1 & 0.05 & 0.20 & 0.15 & 0.20 & 0.15 & 0.1 & 0.05 & 0 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+$E[W] = u_{w} = 0.1 + 0.1 + 0.6 + 0.6 + 1 + 0.9 + 0.7 + 0.4$
+$u_{w} = 4.4$
+
+$Var[w] = \sigma_{w}^{2} = E((x-u_{x})^{2}) = \sum_{1}^{9} (w_{i} - u_{w})^2 p(w_{i})$
+
+$\sigma_{w}^{2} = (1-4,4)^{2} 0.1 + (2-4.4)^{2} 0.05 + (3-4.4)^{2} 0.2 + (4-4.4)^{2} 0.15 + (5-4.4)^{2} 0.2 + (6-4.4)^{2} 0.15 + (7-4.4)^{2} 0.1 + (8-4.4)^{2} 0.05$
+
+$\sigma_{w}^{2} = Var(w) = 3.64$
+
+d) Calcule $P(x+y \leq 3 | $ y é impar
+
+$P(Y_{impar}) = P(1,1) + P(1,3) + P(2,1) + P(2,3) + P(3,1) + P(3,3)$
+
+$P(Y_{impar}) = 0.15 + 0.05 + 0.15 + 0.05 + 0 + 0 = 0.4$
+
+$P(x+y \leq 3 | Y_{impar}) = 0.15 + 0.15 = 0.30$
+
+$P(x+y \leq 3 | Y_{impar}) = 0.3/0.4 = 0.75$
+
+
+\end{solution}
+
+\begin{problem}{13}
+\textbf{[0.04pts]} Questao\_13 Numa loja de eletrodomésticos as vendas mensais de frigoríficos das marcas A e B 
+são variáveis aleatórias X e Y com distribuição conjunta dada por:
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|}
+\hline
+
+$X|Y$ & 1 & 2 & 3  \\
+1 & 0.25 & 0.25 & 0 \\
+2 & 0 & 0.25 & 0.25 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+a) Calcule  a  probabilidade  de  em  um  dado  mês  se  vender  um  número  idêntico  de frigoríficos das marcas A e B.
+
+b) Determine as probabilidades marginais de X e Y.
+
+c)  Determine  a  covariância  das  variáveis  X  e  Y.  Que  conclusão  pode  retirar  acerca  da independência entre as vendas da marca A e B?
+
+d) Seja Z o total das vendas mensais das marcas A e B. Calcule a variância Z.
+
+e) Sabe-se  que  foi  vendido  um  frigorífico  da  marca  A.  Qual  a  distribuição  da  variável aleatória $Y|X = 1$?
+
+\end{problem}
+
+\begin{solution}
+
+
+
+a) $P[A=B] = P(1,1) + P(2,2) = 0,25 + 0,25 = 0,5$
+
+b) Probabilidade marginal:
+
+$P(X=x)$
+$P(1,1) + P(1,2) + P(1,3) = 0.5$
+$P(2,1) + P(2,2) + P(2,3) = 0.5$
+
+$P(Y=y)$
+$P(1,1) + P(1,2)  = 0.25$
+$P(2,1) + P(2,2)  = 0.50$
+$P(3,1) + P(3,2)  = 0.25$
+
+c) Determine a covariância das v.a. X e Y
+
+$E[xy] = 1 0.25 + 2 0.25 + 4 0.25 + 0 + 6 0.25 = 3.25$
+
+$u_{x} = 1 0.5 + 2 0.5 = 1.5$
+$u_{y} = 1 0.25 + 2 0.5 + 3 0.25 = 2$
+
+$\sigma_{xy} = 3.25 - 1.5 2 = 0.25$
+
+\textbf{não são indepemdentes}
+
+d) $Z=A+B$
+
+$Var(z) = \sigma_{z}^{2} = (2-3.5)^{2} 0.25 + (3-3.5)^{2} 0.25 + (4-3.5)^{2} 0.25 + (5-3.5)^{2} 0.25$
+
+$\sigma_{z}^{2} = 0.5625 + 0.0625 + 0.0625 + 0.5625$
+$\sigma_{z}^{2} = 1.25$
+
+e) A=X=1
+
+$P(x=1) = 0.5$
+
+$P(1,1) = 0.25$
+$P(1,2) = 0.25$
+$P(1,3) = 0$
+
+Assim,
+
+$P(1,1)/P_{x}(1) = 0.5$
+$P(1,2)/P_{x}(1) = 0.5$
+$P(1,3)/P_{x}(1) = 0$
+
+$P(Y=y/x=1) = 0.5$ QUANDO, y=1
+$P(Y=y/x=1) = 0.5$ QUANDO, y=2
+$P(Y=y/x=1) = 0$ QUANDO, y=3
+
+\end{solution}
+
+\begin{problem}{14}
+\textbf{[0.04pts]} Questao\_14 Uma  agência  de  um  banco  estudou  as  duas  variáveis  seguintes  com  o  objetivo  de conhecer o comportamento dos titulares de conta corrente: 
+
+X -“Número de produtos do banco utilizados além da conta corrente” 
+
+Y -“Número de meses com a conta corrente a descoberto no ano anterior” 
+
+A distribuição conjunta destas variáveis é indicada na tabela seguinte: 
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|}
+\hline
+
+$X|Y$ & 0 & 1 & 2  \\
+0 & 0.3 & 0.1 & 0.05 \\
+1 & 0.2 & 0.1 & 0.05 \\
+2 & 0.05 & 0.05 & 0 \\
+3 & 0.1 & 0 & 0 \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+a) Determine as probabilidades marginais de X e Y.
+
+b) Qual  a  probabilidade  de  um  cliente  titular  de  conta  corrente  possuir  produtos  do banco além da conta corrente.
+
+c) Sabendo  que  um  dado  cliente  apresentou  a  conta  a  descoberto  em  mais  do  que  um mês do ano passado, qual a probabilidade desse cliente utilizar produtos do banco além da conta corrente?
+
+d) Qual  o  número  médio  de  meses  que  um  cliente  da  agência  apresentou  a  conta  a descoberto no ano anterior? Com que desvio padrão?
+
+\end{problem}
+
+\begin{solution}
+
+a) Probabilidades marginais
+
+$P(X=x) = 0.45$ quando, x=0
+$P(X=x) = 0.35$ quando, x=1
+$P(X=x) = 0.1$  quando, x=2
+$P(X=x) = 0.1$  quando, x=3
+
+P(Y=y) = 0.65 quando y=0
+P(Y=y) = 0.25 quando y=1
+P(Y=y) = 0.1 quando y=2
+
+b) $P(x>0) = P_{x}(1) + P_{x}(2) + P_{x}(3) = 0.35 + 0.10 + 0.10$
+
+$P(x>0) = 0.55$
+
+c) P(x \geq 1 / y >1) = \frac{P(1,1) + P(1,2) + P(1,3)}{P_{y}(2)} = \frac{0.05}{0.1} = 0.5
+
+d) $u_{y} = 0 0.65 + 1 0.25 + 2 0.1 = 0.25 + 0.2 = 0.45$
+
+$\sigma_{y}^{2} = (0 - 0.45) 0.65 + (1-0.45) 0.25 + (2-0.45) 0.1$
+
+$\sigma_{y}^{2} = 0.4475$
+
+Assim, $\sqrt{\sigma_{y}^{2} =} = 0.669$
+
+
+\end{solution}
+
+\begin{problem}{15}
+\textbf{[0.04pts]} Questao\_15 Um  comerciante  vende,  entre  outros  artigos,  máquinas  de  calcular  de  certo  tipo. Seja X a variável aleatória que representa o número de máquinas de calcular disponíveis para venda no início de cada semana. O comerciante possui uma dessas máquinas para 
+seu próprio uso, que poderá eventualmente vender, mas que não conta como disponível. O  número  de  máquinas  vendidas  semanalmente  é  uma  variável  aleatória  Y.  O  par 
+aleatório (X,Y) apresenta a seguinte distribuição de probabilidades:
+
+a) Determine  a  percentagem  de  semanas  em  que  se  vendem  mais  máquinas  do  que  a média das máquinas disponíveis.
+
+\end{problem}
+
+\begin{solution}
+
+$P(X=i, Y=i) = \frac{1}{12} i=1,2,3 0 \leq j \leq i+1 $
+
+a) Vende mais máquinas do que a média disponível
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|}
+\hline
+
+$X|Y$ & 0 & 1 & 2 & 3 & 4 & soma\\
+1 & 1/12 & 1/12 & 1/12 & 0 & 4 & 3/12 \\
+2 & 1/12 & 1/12 & 1/12 & 1/12 & 4 & 4/12 \\
+3 & 1/12 & 1/12 & 1/12 & 1/12 & 4 & 5/12 \\
+soma & 3/12 & 3/12 & 3/12 & 2/12 & 1/12 & 1  \\
+ \hline
+\end{tabular}
+\end{center}
+
+a) $u_{x} = 1 3/12 + 2 4/12 + 3 5/12 = 26/12 = 2.17$
+
+$P_{y}(y>2.17) = P_{y}(3) + P_{y}(4) = 2/12 + 1/12 = 3/12 = 0.25$
+
+b) $P(x>y) = P(1,0) + P(2,1) + P(3,2) = \frac{1}{12}+\frac{1}{12}+\frac{1}{12} = \frac{3}{12}$
+
+c) $P(X=Y-1) = P(1,2) + P(2,3) + P(3,4) = \frac{3}{12}$
+
+
+
+
+\end{solution}
+
+\begin{problem}{16}
+\textbf{[0.04pts]} Questao\_16 Determine  a  função  de  probabilidade  para  a  variável  aleatória  com  a  seguinte função de distribuição cumulativa:
+
+F(x) = 0,   QUANDO, x <2
+F(x) = 0.2, QUANDO, 2≤ x <5.7
+F(x) = 0.5, QUANDO, 5.7≤ x <6.5
+F(x) = 0.8, QUANDO, 6.5≤ x <8.5
+F(x) = 1,   QUANDO, 8.5≤ x
+
+\end{problem}
+
+\begin{solution}
+
+f(0) = 0
+f(2) = 0.2 - f(0) = 0.2
+f(5.7) = 0.5 - f(2) = 0.5 - 0.2 = 0.3
+f(6.5) = 0.8 - f(5.7) - f(2) = 0.8 - 0.3 - 0.2 = 0.3
+f(8.5) = 1 - f(6.5) - f(5.7) - f(2) = 1-0.3-0.3-0.2 = 0.2
+
+Assim,
+
+f(X) = 0,   QUANDO, x=0
+f(x) = 0.2, QUANDO, x=2
+f(x) = 0.3, QUANDO, x=5.7
+f(x) = 0.3, QUANDO, x=6.5
+f(x) = 0.2, QUANDO, x=8.5
+
+\end{solution}
+
+\begin{problem}{17}
+\textbf{[0.04pts]} Questao\_17 Uma variável aleatória X é normalmente distribuída com média igual 1200 e desvio 
+padrão igual a 200. Qual a probabilidade P[800≤ x ≤1000]
+\end{problem}
+
+\begin{solution}
+
+$X = [1200, 200] = [0,1]$
+$P[800 \leq x \leq 1000] = P(\frac{800-1200}{200} < z < \frac{1000 - 1200}{200}$
+
+$P(-2 \leq z \leq -1)$
+
+Assim,
+
+$P[-2 \leq x \leq -1] = Z(-1) - Z(-2) = Z(2) - Z(1) = 0.4772 - 0.3413 = 0.1359$
+
+\end{solution}
+
+\begin{problem}{18}
+\textbf{[0.04pts]} Questao\_18 Uma variável aleatória X associada a função densidade de probabilidade
+
+$f(x) = \frac{1}{20}e^{-\frac{x}{20}}$ quando, $x \geq 0$
+
+$f(x) = 0 $ caso contrário
+
+Determine a probabilidade de X assumir valores entre 10 e 20.
+
+\end{problem}
+
+\begin{solution}
+
+$P(10 \leq X \leq 20) = \int_{10}^{20} f(x) \, dx$
+
+$\int_{10}^{20} \frac{1}{20} e^{-\frac{x}{20}} \, dx$ \\
+$P(10 \leq X \leq 20) = (-e^{-\frac{x}{20}})_{10}^{20}$
+
+$P(10 \leq X \leq 20) = (-e^{-1} + e^{-\frac{1}{2}})$
+
+\end{solution}
+
+\begin{problem}{19}
+\textbf{[0.04pts]} Questao\_19 Considere  o  lançamento  de  dois  dados  e  a  experiência  cujo  resultado  consiste  na soma  do  número  de  pontos  das  faces  que  resultam  do  lançamento.  Defina  esta  soma 
+como sendo uma variável aleatória X. Esboce a função distribuição de probabilidade da v.a. X.
+\end{problem}
+
+\begin{solution}
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|}
+\hline
+
+$\frac{d1}{d2}$ & 1 & 2 & 3 & 4 & 5 & 6  \\
+1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+ \hline
+\end{tabular}
+\end{center}
+
+$X= d1 + d2$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+
+$x_{i}$ & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12  \\
+$P(X=x_{i})$ & $\frac{1}{36}$ & $\frac{2}{36}$ & $\frac{3}{36}$ & $\frac{4}{36}$ & $\frac{5}{36}$ & $\frac{6}{36}$ & $\frac{5}{36}$ & $\frac{4}{36}$ & $\frac{3}{36}$ & $\frac{2}{36}$ & $\frac{1}{36}$  \\
+
+ \hline
+\end{tabular}
+\end{center}
+
+F(X) = 0,x <2 \\
+F(X) = 1/36,  QUANDO, $x =2$ \\
+F(X) = 3/36,  QUANDO, $x\leq3$ \\
+F(X) = 6/36,  QUANDO, $x\leq4$ \\
+F(X) = 10/36, QUANDO, $x\leq5$ \\
+F(X) = 15/36, QUANDO, $x\leq6$ \\
+F(X) = 21/36, QUANDO, $x\leq7$ \\
+F(X) = 26/36, QUANDO, $x\leq8$ \\
+F(X) = 30/36, QUANDO, $x\leq9$ \\
+F(X) = 33/36, QUANDO, $x\leq10$ \\
+F(X) = 35/36, QUANDO, $x\leq11$ \\
+F(X) = 1,     QUANDO, $x\leq12$ \\
+
+\end{solution}
+
+\begin{problem}{20}
+\textbf{[0.04pts]} Questao\_20  A  função  distribuição  de  probabilidade  de  uma  variável  aleatória,  X  tem a forma apresentada na figura a seguir: 
+
+a) Determine o valor Fx(0), a probabilidade de uma v.a.
+
+b) $P(X \geq 0)$ 
+
+\end{problem}
+
+\begin{solution}
+
+$a = \frac{\Delta y}{\Delta x} = \frac{1}{10}$
+
+$b = y - \frac{1}{10}x$
+
+$b = 1 - \frac{1}{10} \times 5 = \frac{1}{2}$
+
+$F_{x}(0) = \frac{1}{2}$
+
+b) $P(X \geq 0)$
+
+$F(X) = \frac{1}{10}x + \frac{1}{2}$ quando, $-5 \leq x < 5$
+
+$F(X) = 1$ quando $x \geq 5$
+
+$F(5) - F(0) = 1 - \frac{1}{2} = \frac{1}{2}$
+
+
+\end{solution}
+
+\begin{problem}{21}
+\textbf{[0.04pts]} Questao\_21 Determine  o  valor  de  a  para  que  a  função  dada  abaixo  possa  representar  uma função densidade de probabilidade contínua. 
+
+$f(x,y) = a(x^{2} + \frac{xy}{3})$ quando, $0 \leq x \leq 1$ ; $0 \leq y \leq 2$
+
+$f(x,y) = 0$ caso contrário
+
+\end{problem}
+
+\begin{solution}
+
+$\int_{0}^{1} \int_{0}^{2} a(x^{2} + \frac{xy}{3}) \,dy \,dx = 1$
+
+$a \int_{0}^{1} (x^{2}y + \frac{xy^{2}}{6})_{0}^{2} \,dx = 1$
+
+$a (\frac{2x^{3}}{3} + \frac{1x^{2}}{3})_{0}^{1} = 1$
+
+$ a=1$
+
+\end{solution}
+
+\begin{problem}{22}
+\textbf{[0.04pts]} Questao\_22 Considerando o exemplo anterior e o valor de a obtido determine:
+
+$P(x \leq \frac{1}{2} \leq 1)$
+
+\end{problem}
+
+\begin{solution}
+
+$\int_{0}^{\frac{1}{2}} \int_{0}^{1} x^{2} + \frac{xy}{3} \, dy \, dx$
+
+$\int_{0}^{\frac{1}{2}} x^{2} + \frac{x}{6} \, dx = \frac{1}{24}+\frac{1}{48} = \frac{3}{48} = \frac{1}{16}$
+
+\textbf{Resposta: $\frac{1}{16}$}
+
+
+
+\end{solution}
+
+\begin{problem}{23}
+\textbf{[0.04pts]} Questao\_23 Sabendo-se que a função densidade de probabilidade conjunta é dada por:
+
+$f(x,y) = a(x^{2} + \frac{xy}{3})$ quando, $0 \leq x \leq 1$ ; $0 \leq y \leq 2$
+
+Determine  a  função  densidade  de  probabilidade  marginal  e  a  função  distribuição  de 
+probabilidade marginal para a variável aleatória X:
+\end{problem}
+
+\begin{solution}
+
+$f_{x}(x) = \int_{0}^{2} x^{2}y + \frac{xy}{6} \, dx$
+
+Assim,
+
+$f_{x}(x) = 2x^{2} + \frac{2x}{3}$ QUANDO, $0 \leq x \leq 1$
+
+$f_{x}(x) = 0$ caso contrário
+
+Calcularemos os intervalos:
+
+x < 0
+
+$F(x) = \int_{-\infty}^{0} 2x^{2} + \frac{2x}{3} \, dx = 0$
+
+$F(x) = 0$
+
+$0 \leq x \leq 1$
+
+$F(x) = \int_{0}^{x} 2x^{2} + \frac{2x}{3} \, dx = 0$
+
+$F(x) = (\frac{2x^{3}}{3} + \frac{2x^{2}}{6})_{0}^{x}$
+
+$F(x) = \frac{2x^{3}}{3}+\frac{x^{3}}{3}$
+
+x > 1
+
+$F(x) = \int_{-\infty}^{0} 2x^{2} + \frac{2x}{3} \, dx = 1$
+
+
+\end{solution}
+
+\begin{problem}{24}
+\textbf{[0.04pts]} Questao\_24 Considerando  que  a  função  densidade  de  probabilidade  conjunta  das  variáveis aleatórias é dada por:
+
+Determine: 
+a) Função densidade de probabilidade condicional $f_{x|y}(X|Y)$
+
+b) $f_{X|y}(x|y) = P(X \leq x, Y=y)$
+
+\end{problem}
+
+\begin{solution}
+
+a) $f_{x|y}(X|Y) = \frac{f(x,y)}{f(y)}$
+
+$f_{x|y}(X|Y) = \frac{\frac{x+y}{3}}{\int_{0}^{1}\frac{x+y}{3} \,dx}$
+
+$f_{x|y}(X|Y) = \frac{x+y}{3} \frac{6}{2y+1} = \frac{x+y}{y+0.5}$ QUANDO, $0 \leq x \leq 1 ; 0 \leq y \leq 2$
+
+b) $F_{x|y}(x|y) = \frac{\int_{-\infty}^{x}f(x,y) \, dx}{\int_{0}^{1} f(x,y) \, dx}$
+
+$F_{x|y}(x|y) = \frac{(\frac{x+y}{y+0.5})_{0}^{x}}{(\frac{x+y}{y+0.5})_{0}^{1}} $
+
+$F_{x|y}(x|y) = \frac{\frac{x+y}{y+0.5}}{\frac{1}{2}+y}$
+
+$f(x,y) = 0 $, QUANDO $x<0;y<0$
+
+$f(x,y) = \frac{\frac{x^{2}}{2}+xy}{\frac{1}{2}+y} 
+$, QUANDO $0 \leq x \leq 1; 0 \leq y \leq 2$
+
+$f(x,y) = 1 $, caso contrário
+
+\end{solution}
+
+\begin{problem}{25}
+\textbf{[0.04pts]} Questao\_25 Verifique se as variáveis aleatórias X e Y são independentes, sabendo-se que a função densidade de probabilidade conjunta é dada por: 
+
+\end{problem}
+
+\begin{solution}
+
+$f(x,y) = \frac{1}{2} e^{-y}$ quando, $0 \leq x \leq 2, y> 0$
+
+$f_{x}(x) = \int_{0}^{\infty} \frac{1}{2} e^{-y} \, dy$
+
+$f_{x}(x) = -\frac{1}{2} e^{-y}|_{0}^{\infty} = 0 + \frac{1}{2} = \frac{1}{2}$
+
+$f_{y}(y) = \int_{0}^{2} \frac{1}{2} e^{-y} \, dy$
+
+$f_{y}(y) = \frac{1}{2} e^{-y}x|_{0}^{2} = (\frac{e^{-y}}{2} \times 2) - (\frac{e^{-y}}{2} \times 0) = e^{-y}$
+
+$f(x,y) = f_{x}(x) \times f_{y}(y) = \frac{e^{-y}}{2} \newline$
+
+Assim, é observado que os eventos são independentes
+
+\end{solution}
+
+\end{document}
+
+
+
+
+
